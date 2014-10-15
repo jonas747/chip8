@@ -229,7 +229,7 @@ func (c *Chip8Emu) cycle() (uint16, uint16) {
 		case 0x00e0: // Clear the screen
 			c.gfx = [64 * 32]bool{}
 			c.drawFlag = true
-		case 0x0ee: // Return from subroutine
+		case 0x00ee: // Return from subroutine
 			c.sp -= 1
 			c.pc = c.stack[c.sp] + 2
 			c.stack[c.sp] = 0
